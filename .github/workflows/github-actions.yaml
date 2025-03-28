@@ -5,13 +5,12 @@ run-name: ${{ github.actor }} is testing the ML workflow 🚀
 on: [push]
 
 jobs:
-  Explore-ML-Workflow:
+  explore-ml-workflow:
     runs-on: ubuntu-latest
-
-      steps:
-      - run: echo "🍇 The workflow was triggered by a ${{ github.event_name }} event."
+    steps:
+      - run: echo "🎯 The workflow was triggered by a ${{ github.event_name }} event."
       - run: echo "🖥️ Running on a ${{ runner.os }} virtual machine hosted by GitHub."
-      - run: echo "🪴 Branch: ${{ github.ref }} | Repository: ${{ github.repository }}"
+      - run: echo "🌿 Branch: ${{ github.ref }} | Repository: ${{ github.repository }}"
 
       - name: Checkout code from repository
         uses: actions/checkout@v4
@@ -23,11 +22,4 @@ jobs:
         run: ls ${{ github.workspace }}
 
       - run: echo "✅ Workflow completed with status: ${{ job.status }}"
-
-
-
-
-
-
-
 
