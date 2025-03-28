@@ -1,6 +1,6 @@
 name: GitHub Actions Demo for ML Project
 
-run-name: ${{ github.actor }} is testing the ML workflow 🚀
+run-name: "${{ github.actor }} is testing the ML workflow 🚀"
 
 on: [push]
 
@@ -9,25 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print trigger info
-        run: echo "🎯 The workflow was triggered by a ${{ github.event_name }} event."
+        run: "echo '🎯 The workflow was triggered by a ${{ github.event_name }} event.'"
 
       - name: Print machine details
-        run: echo "🖥️ Running on a ${{ runner.os }} virtual machine hosted by GitHub."
+        run: "echo '💻 Running on a ${{ runner.os }} virtual machine hosted by GitHub.'"
 
       - name: Print branch and repo
-        run: echo "🌿 Branch: ${{ github.ref }} | Repository: ${{ github.repository }}"
+        run: "echo '🌿 Branch: ${{ github.ref }} | Repository: ${{ github.repository }}'"
 
       - name: Checkout code from repository
         uses: actions/checkout@v4
 
       - name: Confirm repository cloned
-        run: echo "📁 Repository ${{ github.repository }} has been cloned successfully."
+        run: "echo '📦 Repository ${{ github.repository }} has been cloned successfully.'"
 
       - name: Announce workflow readiness
-        run: echo "🧪 Ready to begin testing the ML project."
+        run: "echo '✅ Ready to begin testing the ML project.'"
 
       - name: List contents of project directory
-        run: ls ${{ github.workspace }}
+        run: "ls ${{ github.workspace }}"
 
       - name: Show workflow status
-        run: echo "✅ Workflow completed with status: ${{ job.status }}"
+        run: "echo '🔚 Workflow completed with status: ${{ job.status }}'"
+
+
