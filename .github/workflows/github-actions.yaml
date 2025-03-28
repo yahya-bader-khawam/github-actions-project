@@ -8,18 +8,26 @@ jobs:
   explore-ml-workflow:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎯 The workflow was triggered by a ${{ github.event_name }} event."
-      - run: echo "🖥️ Running on a ${{ runner.os }} virtual machine hosted by GitHub."
-      - run: echo "🌿 Branch: ${{ github.ref }} | Repository: ${{ github.repository }}"
+      - name: Print trigger info
+        run: echo "🎯 The workflow was triggered by a ${{ github.event_name }} event."
+
+      - name: Print machine details
+        run: echo "🖥️ Running on a ${{ runner.os }} virtual machine hosted by GitHub."
+
+      - name: Print branch and repo
+        run: echo "🌿 Branch: ${{ github.ref }} | Repository: ${{ github.repository }}"
 
       - name: Checkout code from repository
         uses: actions/checkout@v4
 
-      - run: echo "📁 Repository ${{ github.repository }} has been cloned successfully."
-      - run: echo "🧪 Ready to begin testing the ML project."
+      - name: Confirm repository cloned
+        run: echo "📁 Repository ${{ github.repository }} has been cloned successfully."
+
+      - name: Announce workflow readiness
+        run: echo "🧪 Ready to begin testing the ML project."
 
       - name: List contents of project directory
         run: ls ${{ github.workspace }}
 
-      - run: echo "✅ Workflow completed with status: ${{ job.status }}"
-
+      - name: Show workflow status
+        run: echo "✅ Workflow completed with status: ${{ job.status }}"
